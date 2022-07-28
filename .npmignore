@@ -1,0 +1,20 @@
+.DS_Store
+node_modules
+
+dist
+packages
+public
+src
+.env.npm
+.gitignore
+env.d.ts
+index.html
+package-lock.json
+tsconfig.json
+tsconfig.node.json
+yarn-lock.json
+vite.config.js
+
+# Editor directories and files
+.vscode
+# *.sw?
