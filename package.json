@@ -1,14 +1,28 @@
 {
   "name": "@baikbingo/cat-core",
-  "private": true,
+  "private": false,
   "version": "1.0.0",
-  "type": "module",
+  "description": "前端订阅转发架构核心",
+  "keywords": ["baikbingo","message","cat","cat-core","baikbingo-cat","@baikbingo/cat-core"],
   "author": "zmkwjx",
   "email": "zmkwjx@126.com",
   "license": "ISC",
+  "files": ["dist"],
+  "main": "./lib/baikbingo-cat.umd.js",
+  "module": "./lib/baikbingo-cat.es.js",
+  "unpkg": "./lib/baikbingo-cat.min.js",
+  "exports": {
+    ".": {
+      "import": "./lib/baikbingo-cat.es.js",
+      "require": "./lib/baikbingo-cat.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
+    "build-npm": "vue-tsc --noEmit && vite build --mode npm",
+    "publish": "npm run build && npm publish --access public",
+    "Publish-beta": "npm run publish --tag beta",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -17,6 +31,7 @@
     "vue": "^3.2.37"
   },
   "devDependencies": {
+    "@types/node": "^18.6.1",
     "@vitejs/plugin-vue": "^3.0.0",
     "typescript": "^4.6.4",
     "vite": "^3.0.0",

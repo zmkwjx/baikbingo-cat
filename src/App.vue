@@ -1,6 +1,10 @@
 <template>
   <div class="baikbingo-cat">
-    <div class="baikbingo-cat-item" v-for="(item, index) in clientList" :key="index">
+    <div
+      class="baikbingo-cat-item"
+      v-for="(item, index) in clientList"
+      :key="index"
+    >
       <div class="baikbingo-cat-theme">
         发送的主题：
         {{ item.sendTheme }}
@@ -23,20 +27,20 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import { 
+import { ref, onMounted } from 'vue'
+import {
   CatClientMessageStruct as Message,
-  CatClientStruct as Client,
- } from "./core/types";
-import { useCatCore } from "./core";
+  CatClientStruct as Client
+} from '@packages/cat-core/types'
+import { useCatCore } from '@packages/cat-core'
 
 interface ClientListStruct {
-  title: string;
-  core: Client;
-  sendTheme: string[];
-  receiveTheme: string[];
-  sendValue: string;
-  receiveLog: Message[];
+  title: string
+  core: Client
+  sendTheme: string[]
+  receiveTheme: string[]
+  sendValue: string
+  receiveLog: Message[]
 }
 
 const clientList = ref<ClientListStruct[]>([
@@ -112,7 +116,7 @@ onMounted(() => {
       item.core.receive(action, (message: Message) => {
         item.receiveLog.push(message)
       })
-    });
+    })
   })
 })
 
@@ -124,7 +128,9 @@ const handleSend = (item: ClientListStruct) => {
 </script>
 
 <style>
-html, body, #app {
+html,
+body,
+#app {
   padding: unset;
   margin: unset;
   background-color: #e0e0e0;

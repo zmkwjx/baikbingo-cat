@@ -9,7 +9,7 @@ export default class CatServer implements Server {
   private store: Store
 
   // 加锁状态
-  private lock: Number | Boolean = false
+  private lock: null | NodeJS.Timeout = null
 
   /**
    * 初始化
@@ -20,11 +20,11 @@ export default class CatServer implements Server {
 
   // 任务调度
   public dispatch () {
-    if (this.lock === false) {
+    if (this.lock === null) {
       this.lock = setTimeout(async () => {
         const taskInfo = this.store.taskShift()
         taskInfo && (await this.handler(taskInfo))
-        this.lock = false
+        this.lock = null
         this.dispatch()
       })
     }
