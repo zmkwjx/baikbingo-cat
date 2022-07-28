@@ -1,7 +1,7 @@
 {
   "name": "@baikbingo/cat-core",
   "private": false,
-  "version": "1.0.0-beta2",
+  "version": "1.0.0-beta3",
   "description": "前端订阅转发架构核心",
   "keywords": ["baikbingo","message","cat","cat-core","baikbingo-cat","@baikbingo/cat-core"],
   "author": "zmkwjx",
