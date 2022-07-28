@@ -1,7 +1,7 @@
 {
   "name": "@baikbingo/cat-core",
   "private": false,
-  "version": "1.0.0-beta3",
+  "version": "1.0.0-beta4",
   "description": "前端订阅转发架构核心",
   "keywords": ["baikbingo","message","cat","cat-core","baikbingo-cat","@baikbingo/cat-core"],
   "author": "zmkwjx",
@@ -21,7 +21,7 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "build-npm": "vue-tsc --noEmit && vite build --mode npm",
-    "publish": "npm run build-npm && npm publish --access public",
+    "publish-main": "npm run build-npm && npm publish --access public",
     "publish-beta": "npm run publish --tag beta",
     "preview": "vite preview"
   },
