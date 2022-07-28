@@ -22,7 +22,7 @@
     "build": "vue-tsc --noEmit && vite build",
     "build-npm": "vue-tsc --noEmit && vite build --mode npm",
     "publish-main": "npm run build-npm && npm publish --access public",
-    "publish-beta": "npm run publish --tag beta",
+    "publish-beta": "npm run publish-main --tag beta",
     "preview": "vite preview"
   },
   "dependencies": {
