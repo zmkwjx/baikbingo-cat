@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import { useCatCore } from '@packages/cat-core'
+import { useCatCore } from '../cat-core'
 
 test('client A say hello world', () => {
   const clientA = useCatCore()
